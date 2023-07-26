@@ -17,6 +17,8 @@ _list_or_array = [1,2,3]
 _tuple = (1, '2', [3])
 ```
 
+lalala
+
 ### branching
 
 ### functions
@@ -44,7 +46,17 @@ with open(path_to_file, encoding='utf8') as f:
 
 ### strings
 
-### arrays
+### lists (arrays)
+
+```python
+mylist = ["apple", "banana", "cherry"]
+len(mylist)
+thislist[1] = "blackcurrant"
+thislist[1:2] = ["blackcurrant", "watermelon"]
+thislist.insert(2, "watermelon")
+thislist.append("orange")
+thislist.remove("banana")
+```
 
 ### dictionaries
 
@@ -53,6 +65,14 @@ with open(path_to_file, encoding='utf8') as f:
 ### comments
 
 ### regexp
+
+### debug
+
+```python
+import pdb; pdb.set_trace()
+# or (since 3.7)
+breakpoint()
+```
 
 ### logging
 
@@ -68,6 +88,12 @@ logger.debug('bla bla')
 
 ## Package manager (pip)
 
+### show package
+
+```bash
+pip3 show <package_name>
+```
+
 ### upgrade package
 
 ```bash
@@ -80,11 +106,11 @@ python -m pip uninstall <package>
 
 ### manage dependencies
 
-```
+```bash
 python -m pip install -r requirements.txt
 ```
 
-```
+```bash
 python -m pip freeze > requirements.txt
 ```
 
