@@ -1,5 +1,7 @@
+[[systemd]]
 
-### ps
-find by process PIDs:
--p 1,2,3
-ps -wo pid,lstart,etime,cmd -p 10243
+file last access time:
+stat
+
+delete files not accessed last 30 days:
+find dir -atime +30 -delete

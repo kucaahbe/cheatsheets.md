@@ -1,0 +1,5 @@
+---
+tags: shells
+---
+[[bash]]
+[[zsh]]

@@ -1,11 +1,30 @@
+---
+tags:
+  - shells
+  - languages
+---
 # Bash
 
-### variables
+## Language
+
+### Variables
+
 https://tldp.org/LDP/abs/html/parameter-substitution.html
+```bash
 a=1 # not a = 1
 b=one
+```
 
-### branching
+#### environment variables
+```bash
+export VAR_1=val_1
+unset VAR_1
+# to list
+env
+env VAR_1=123 command # run a "command" with VAR_1 set to 123
+env -u VAR_1 command # run a "command" with VAR_1 unset
+```
+### if/else/case
 
 ```bash
 var=123
@@ -55,20 +74,66 @@ done
 ### IO
 
 ### strings
+https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 
 ```bash
+s1="my_"
+s1+="\nstring"
+# -e honors newlines
+echo -e $s1
+
 file=sraka.scss
 echo ${file/.scss/.css.scss}
 
 for file in $(git ls-files  -- *.scss G -v css.scss); do; git mv $file ${file/.scss/.css.scss}; done
 ```
 
-### arrays
+### arrays/dictionaries
 https://www.cyberciti.biz/faq/bash-for-loop-array/
+```bash
+array=( one two three )
+from_cmd=( $(ls -1 *.lst) )
+# or
+declare -a ARRAY_NAME_HERE=(value1 value2 valueN)
 
-### dictionaries
+declare -A ARRAY_NAME_HERE
+declare -A fruits
+fruits[south]="Banana"
+fruits[north]="Orange"
+fruits[west]="Passion Fruit"
+fruits[east]="Pineapple"
+
+printf "%s\n" "${array[@]}"
+printf "%s\n" "${files[@]}"
+printf "%s\n" "${limits[@]}"
+printf "%s\n" "${fruits[@]}"
+
+for key in "${!fruits[@]}"; do
+  echo "Key for fruits array is: $key"
+done
+
+for value in "${fruits[@]}"; do
+  echo "Value for fruits array is: $value"
+done
+```
 
 ### docstrings
+```bash
+a=ZZZ
+cat << XML > test.file
+  HERE-DOCUMENT $a
+XML
+
+cat << 'XML' > test.file
+  HERE-DOCUMENT $a - no interpolation!
+XML
+
+if true; then
+	cat <<- EOF
+	++Line with a leading TAB --> TAB TAB TAB.
+	EOF
+fi
+```
 
 ### comments
 
@@ -80,7 +145,38 @@ redirect stderr to stdout
 ```bash
 command 2>&1
 ```
+
 redirect stderr to file
 ```bash
 command 2>file.txt
+```
+
+## CLI
+
+CLI shortcuts
+
+https://cheatography.com/clyde-stiller/cheat-sheets/bash-command-line-shortcuts/
+
+## Interpreter settings
+
+| option | description |
+| --- | --- |
+| `set -e` | abort if something went wrong |
+| `set -x` (`set -o xtrace`) | print execution statements using PS4 |
+| `set -u` | raise an error about undefined variable |
+
+## Misc
+
+split line by delimiter: **cut**
+merge lines: **paste**
+calculator: **bc**
+
+### Examples
+
+calculate the sum of numbers from file (line with needed numbers looks like this: `# Offense count: 13”):`
+
+```bash
+grep 'Offense count' .rubocop_todo.yml | cut -d' ' -f 4 | paste -s -d+ - | bc
+# or
+grep 'Offense count' .rubocop_todo.yml | awk -F' ' '{s+=$4} END {print s}'
 ```

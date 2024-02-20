@@ -1,6 +1,29 @@
+---
+tags:
+  - shells
+  - languages
+---
 # Python
 
 ## Language
+
+### CLI handling
+```python
+#!/usr/bin/env python3
+import sys
+
+COMMIT_SOURCE = sys.argv[2] if len(sys.argv) > 2 else ""
+
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
+print('Hello world', file=sys.stderr)
+
+s = input('--> ')
+
+if s != 'yes':
+  sys.exit(-1)
+```
 
 ### variables & basic data
 
@@ -17,9 +40,20 @@ _list_or_array = [1,2,3]
 _tuple = (1, '2', [3])
 ```
 
-lalala
+### operators (+= == etc.)
 
-### branching
+### branching (conditional)
+```python
+if True:
+  print('do stuff')
+elif a > b:
+  # elif
+else:
+  # else
+
+COMMIT_SOURCE = sys.argv[2] if len(sys.argv) > 2 else ""
+
+```
 
 ### functions
 
@@ -46,6 +80,12 @@ with open(path_to_file, encoding='utf8') as f:
 
 ### strings
 
+```python
+len(s) # length
+print(f'Hello {name}! This is {program}')
+print("%s %s" %('Hello','World',))
+print('Hello, {}'.format(name))
+```
 ### lists (arrays)
 
 ```python
@@ -60,11 +100,29 @@ thislist.remove("banana")
 
 ### dictionaries
 
+### looping
+
+```python
+for key, value in {'k1': 'v1'}.items():
+     # to exit loop:
+     if key==6: break
+     # to skip loop iteration:
+     if key==5: continue
+     print(key, "->", value)```
+```
+
+
 ### docstrings
 
 ### comments
 
 ### regexp
+```python
+import re
+
+x = re.search("^The.*Spain$", txt)
+s.group(1)
+```
 
 ### debug
 
@@ -85,7 +143,8 @@ logger.info('hello')
 logger.error('fuck')
 logger.debug('bla bla')
 ```
-
+### file system access
+### OOP
 ## Package manager (pip)
 
 ### show package
