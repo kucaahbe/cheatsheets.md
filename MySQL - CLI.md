@@ -43,7 +43,7 @@ mysql_config_editor set --login-path=LOGIN_PATH --host=HOST --user=USER --passwo
 remove credentials:
 
 ```sh-session
-mysql_config_editor remove —login-path=LOGIN_PATH
+mysql_config_editor remove -—login-path=LOGIN_PATH
 ```
 
 `mysql_config_editor` creates and maintains encrypted `~/.mylogin.cnf`

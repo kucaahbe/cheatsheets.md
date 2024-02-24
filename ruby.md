@@ -66,6 +66,10 @@ ruby -rprofile -S some_executable
 ```
 
 ## Gems
+how to run an executable from a specific version of a gem:
+```sh-session
+rails _1.2.3_ -v
+```
 uninstall all gems
 ```sh-session
 gem uninstall -aIx

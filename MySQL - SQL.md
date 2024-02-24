@@ -83,6 +83,11 @@ show collation for the table:
 ```sql
 SHOW FULL COLUMNS FROM my_tablename;
 ```
+show columns charset:
+```sql
+SELECT TABLE_NAME, COLUMN_NAME, CHARACTER_SET_NAME FROM INFORMATION_SCHEMA.Columns WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'tbl_name';
+```
+
 
 # DDL
 ## re-order columns
