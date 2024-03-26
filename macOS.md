@@ -52,9 +52,17 @@ osascript -l JavaScript -i
 
 # Virtualization
 
-| Name | Pricing | Vagrant support |
-|---|---|---|
-| [VirtualBox](https://www.virtualbox.org/wiki/Downloads) | Free | [YES](https://developer.hashicorp.com/vagrant/docs/providers/virtualbox) |
-| [UTM](https://mac.getutm.app/) | Free | [WIP](https://github.com/hashicorp/vagrant/issues/12518)/[WIP](https://github.com/utmapp/UTM/issues/3718) virtio? |
-| [Tart](https://tart.run/) | Free | [maybe?](https://github.com/cirruslabs/vagrant-tart) |
-| [VirtualBuddy](https://github.com/insidegui/VirtualBuddy) | Free | unknown, virtio? |
+Name | Pricing | Virtualization | Vagrant support | Remark
+---|---|---|---|---
+[VirtualBox](https://www.virtualbox.org/wiki/Downloads) | Free | Native | [YES](https://developer.hashicorp.com/vagrant/docs/providers/virtualbox) | slow in graphics mode
+[UTM](https://mac.getutm.app/) | Free | QEMU/Native | [WIP](https://github.com/hashicorp/vagrant/issues/12518)/[WIP](https://github.com/utmapp/UTM/issues/3718) virtio? | awesome in graphics mode with native virtualization
+[Tart](https://tart.run/) | Free | Native (ARM macs only) | [maybe?](https://github.com/cirruslabs/vagrant-tart) |
+[VirtualBuddy](https://github.com/insidegui/VirtualBuddy) | Free | Native (ARM macs only) | unknown, virtio? |
+
+# system parameters
+
+## display
+```sh-session
+system_profiler SPDisplaysDataType
+```
+For DPI/PPI, google macbook (year, display size, etc.) "tech details", search for "pixels per inch" (PPI) on a [page](https://support.apple.com/en-us/111339)
