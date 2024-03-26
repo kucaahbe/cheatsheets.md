@@ -1,5 +1,11 @@
 # AWK
 
+mass file rename with git:
+
+```sh-session
+git ls-files *es6* | awk -F.es6 '{ system("git mv " $0 " " $1 $2) }'
+```
+
 append "rubocop:disable" to the end of the needed line:
 ```awk
 #!/usr/bin/awk -f

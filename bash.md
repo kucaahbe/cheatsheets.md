@@ -27,16 +27,23 @@ env -u VAR_1 command # run a "command" with VAR_1 unset
 ### if/else/case
 
 ```bash
+# man test
+if [[ "a" = "a" ]]; then
+  echo "a=a"
+fi
+
+if ! grep -q 'smth' file.txt; then
+  echo -e "smth" >> file.txt
+fi
+
 var=123
 case $var in
   123)
     echo 123
     ;;
-
   PATTERN_N)
     STATEMENTS
     ;;
-
   *)
     echo whatever
     ;;
@@ -95,6 +102,7 @@ array=( one two three )
 from_cmd=( $(ls -1 *.lst) )
 # or
 declare -a ARRAY_NAME_HERE=(value1 value2 valueN)
+echo "length: ${#ARRAY_NAME_HERE[@]}"
 
 declare -A ARRAY_NAME_HERE
 declare -A fruits
@@ -127,6 +135,11 @@ XML
 cat << 'XML' > test.file
   HERE-DOCUMENT $a - no interpolation!
 XML
+
+program loadScriptFromString "$(cat << JS
+console.log("hello")
+JS
+)"
 
 if true; then
 	cat <<- EOF

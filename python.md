@@ -160,17 +160,22 @@ sudo pip3 install <package_name> --upgrade
 ```
 
 ```bash
-python -m pip uninstall <package>
+python3 -m pip uninstall <package>
 ```
 
 ### manage dependencies
 
 ```bash
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ```bash
-python -m pip freeze > requirements.txt
+python3 -m pip freeze > requirements.txt
+```
+
+### Remove all packages
+```sh-session
+python3 -m pip freeze | cut -d "@" -f1 | xargs python3 -m pip uninstall -y
 ```
 
 ## Version management
@@ -180,5 +185,5 @@ https://docs.python.org/3/library/venv.html
 ### venv
 
 ```bash
-python3 -m venv path/to/dir
+python3 -m venv [--system-site-packages] path/to/dir/.venv
 ```
