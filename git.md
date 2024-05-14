@@ -8,7 +8,7 @@ mark files needs to be merge-resolved:
 git checkout --conflict=merge file
 ```
 
-grep with excluding specific pattern:
+grep with excluding specific pattern or files:
 ```sh-session
 # search for "belongs_to" but filter out "optional"
 git grep -e belongs_to --and --not -e optional -- app

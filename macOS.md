@@ -8,7 +8,7 @@ nameserver 127.0.0.1
 #nameserver 8.8.8.8 # additional stuff example
 ```
 
-own DNS server:
+Own DNS server:
 
 ```sh-session
 brew install dnsmasq

@@ -10,7 +10,8 @@ append "rubocop:disable" to the end of the needed line:
 ```awk
 #!/usr/bin/awk -f
 # file: fixup.awk
-# ./bin/rubocop --only Rails/CreateTableWithTimestamps -f emacs db/migrate
+# usage:
+#   ./bin/rubocop --only Rails/CreateTableWithTimestamps -f emacs db/migrate | awk -f fixup.awk
 
 # Set the field separator to ":" to extract line number
 BEGIN {
@@ -35,7 +36,8 @@ append to begin and end of each file rubocop disable/enable:
 ```awk
 #!/usr/bin/awk -f
 # file: fixup.awk
-# ./bin/rubocop --only Rails/ReversibleMigration -f files db/migrate | awk -f fixup.awk
+# usage:
+#   ./bin/rubocop --only Rails/ReversibleMigration -f files db/migrate | awk -f fixup.awk
 
 {
     file = $1

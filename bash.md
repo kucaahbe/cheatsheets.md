@@ -190,6 +190,8 @@ calculate the sum of numbers from file (line with needed numbers looks like this
 
 ```bash
 grep 'Offense count' .rubocop_todo.yml | cut -d' ' -f 4 | paste -s -d+ - | bc
-# or
+```
+or
+```bash
 grep 'Offense count' .rubocop_todo.yml | awk -F' ' '{s+=$4} END {print s}'
 ```
