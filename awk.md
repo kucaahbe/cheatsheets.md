@@ -47,3 +47,26 @@ append to begin and end of each file rubocop disable/enable:
     system("gsed -i '1 i \\# rubocop:disable " rubocop_issue "\n; $ a \\# rubocop:enable " rubocop_issue ";' " file)
 }
 ```
+mass-apply some rubocop change:
+```awk
+#!/usr/bin/awk -f
+# file: fixup.awk
+# usage:
+#   ./bin/rubocop --only Capybara/ClickLinkOrButtonStyle -f emacs | awk -f fixup.awk
+
+# Set the field separator to ":" to extract line number
+BEGIN {
+    FS = ":"
+}
+
+# Process each line
+{
+    # Extract file name, line number, and the rest of the line
+    file = $1
+    line_num = $2
+
+    sed = "gsed -i -E '" line_num "s/(click_button|click_link)/click_on/g' " file
+    #print sed
+    system(sed)
+}
+```

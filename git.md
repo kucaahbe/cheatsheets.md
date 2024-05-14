@@ -18,6 +18,9 @@ git grep -l -E -e belongs_to --and --not -e 'optional:\s*true' -- app
 
 # find (within found files) only files with rails validations:
 git grep -l -E -e belongs_to --and --not -e 'optional:\s*true' -- app | xargs grep -l validates
+
+# exclude specific files (*.js)
+git grep term -- ':!*.js'
 ```
 
 ignore locally changed file:
