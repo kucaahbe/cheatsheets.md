@@ -1,10 +1,16 @@
 ---
 tags: tools
 ---
-# hostnamectl
+# runtime
+## hostnamectl
 shows info similar to `lsb_release`
-# systemctl
-# journalctl
+## systemctl
+conveniently create drop-in files:
+```sh-session
+# edits /etc/systemd/system/unit.service.d/override.conf
+sudo systemctl edit unit
+```
+## journalctl
 https://gist.github.com/sergeyklay/f401dbc8286f732783e05072f03ecb61
 ```sh-session
 # tail logs:
@@ -14,9 +20,9 @@ journalctl -xe -u ssh
 # kernel messages (-k), scrolled to bottom (-e):
 journalctl -k -e
 ```
-# networkctl
+## networkctl
 manage systemd-networkd network configuration
-## Migrate from NetworkManager
+### Migrate from NetworkManager
 1. install packages:
    ```sh-session
    # systemd-networkd is available in the default package "systemd" in Debian
@@ -58,5 +64,5 @@ manage systemd-networkd network configuration
    sudo apt-get purge network-manager
    sudo apt-get autoremove
    ```
-# machinectl
-manage systemd-nspawn containers
+## machinectl
+manage systemd-nspawn [containers](systemd-container.md)
