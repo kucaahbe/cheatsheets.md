@@ -36,6 +36,8 @@ sudo mmdebstrap \
 	--include=systemd,dbus --components=main \
 	"$UBUNTU_RELEASE" "$MACHINES_FOLDER/$VM_NAME" "$APT_MIRROR">)
 ```
+DNS name of the container:
+place "mymachines" before the "resolve" or "dns" entry of the "hosts:" line of /etc/nsswitch.conf
 # Container management
 Start/stop/kill/reboot:
 ```sh-session
