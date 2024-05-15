@@ -1,0 +1,44 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#tools",
+      "color": {
+        "a": 1,
+        "rgb": 6465405
+      }
+    },
+    {
+      "query": "tag:#languages",
+      "color": {
+        "a": 1,
+        "rgb": 15277084
+      }
+    },
+    {
+      "query": "tag:#shells",
+      "color": {
+        "a": 1,
+        "rgb": 13895817
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.287027994791667,
+  "repelStrength": 4.84781901041667,
+  "linkStrength": 1,
+  "linkDistance": 144,
+  "scale": 2.2620898384634907,
+  "close": true
+}
