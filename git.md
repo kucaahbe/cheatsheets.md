@@ -83,6 +83,6 @@ git log --grep
 search in diffs:
 
 ```
-git log -Sgovnocode-as-string
-git log -Ggovnocode-as-regex
+git log -Scode-as-string
+git log -Gcode-as-regex
 ```

@@ -32,6 +32,7 @@ The difference is in chars: `?`,`+`,`()`,`{}`,`|` (in BRE they match themselfs)
 | `\char` | Matches char, where char is one of `$`, `*`, `.`, `[`, `\`, or `^`. Note that the only C-like backslash sequences that you can portably assume to be interpreted are `\n` and `\\`; in particular `\t` is not portable, and matches a "t" under most implementations of sed, rather than a tab character |
 
 ### ERE - extended regular expressions
+`sed -E`
 
 | syntax | description |
 |---|---|

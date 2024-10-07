@@ -2,7 +2,7 @@
 tags:
   - languages
 ---
-### cli handlig
+### CLI handlig
 
 ```ruby
 #!/usr/bin/env ruby
@@ -35,6 +35,11 @@ HTML
   Article about heredocs
 
 HTML
+
+  query = <<~HTML.chomp
+    indented
+  HTML
+  # "indented"
 ```
 
 interpolation disabled:

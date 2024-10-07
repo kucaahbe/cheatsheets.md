@@ -20,6 +20,7 @@ hotkey | action
 `,` | move window up
 `.` | move window down
 `K` | close window (kill
+`ctrl-a :number X` | set window number
 
  ## Sessions
 

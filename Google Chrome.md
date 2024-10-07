@@ -6,3 +6,7 @@
 2. Now go to [chrome://settings/clearBrowserData](chrome://settings/clearBrowserData), tick the box "_Cached images and files_" and press click the button "_Clear data_".
 
 [source](https://superuser.com/questions/565409/how-to-stop-an-automatic-redirect-from-http-to-https-in-chrome)
+
+### trust bad TLS certificate
+per [this](https://stackoverflow.com/a/31900210/692969):
+type `thisisunsafe` anywhere on the unsafe page
