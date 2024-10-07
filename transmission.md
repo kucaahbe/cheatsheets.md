@@ -3,5 +3,12 @@ https://github.com/transmission/transmission/blob/main/docs/Configuration-Files.
 
 ## CLI
 use `transmission-remote host:port -n user:pwd` (while `sudo -u transmission-user`)
+
 inspect torrent content: `transmission-show file.torrent`
+
 add torrent ` transmission-remote localhost:9091 -n user:pwd -a file.torrent -w /folder`
+
+change location for all torrents:
+`transmission-remote -t all  --find /path/where/torrents/are`
+
+start all torrents after directory fixed: `transmission-remote -t all --start`
